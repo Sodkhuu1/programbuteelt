@@ -12,17 +12,18 @@ public class hello {
         Date today = new Date();
 
         Calendar myNextCalendar = Calendar.getInstance();
-        myNextCalendar.set(2024, 3, 4);
+        myNextCalendar.set(1998, 3, 4);
         Date nyd = myNextCalendar.getTime();
 
         hello myObject = new hello();
         long days = myObject.daysBetween(today, nyd);
+        days = days + 1;
 
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd, YYYY");
         String todayDate = sdf.format(today);
         String newYearsDay = sdf.format(nyd);
 
-        System.out.println(todayDate + " өдрөөс " + newYearsDay + " хүртэл нийт " + days + " өдөр бөйна.");
+        System.out.println(newYearsDay + " udruus " + todayDate + " hurtel niit " + days + " udur baina.");
 
     }
 
