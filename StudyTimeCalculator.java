@@ -27,11 +27,11 @@ public class StudyTimeCalculator {
             // Calculating study time based on school schedule
             if (date.isBefore(LocalDate.of(1988, 9, 1))) { // For the first period
                 if (date.getYear() >= 1978 && date.getYear() <= 1981) {
-                    studyTime += 4 * 180; // 4 hours/day for 180 days/year (1st-3rd grade)
+                    studyTime += (4 * (3 / 4) * (6 / 7) * 274 * 3); // 4 hours/day for 180 days/year (1st-3rd grade)
                 } else if (date.getYear() >= 1982 && date.getYear() <= 1987) {
-                    studyTime += 34 * 5; // 34 hours/week for 5 days (4th-8th grade)
+                    studyTime += (34 * (274 / 7) * (3 / 4) * 5); // 34 hours/week for 5 days (4th-8th grade)
                 } else {
-                    studyTime += 6 * 180; // 6 hours/day for 180 days/year (9th-10th grade)
+                    studyTime += (6 * 0.75 * (6 / 7) * 274 * 2); // 6 hours/day for 180 days/year (9th-10th grade)
                 }
             } else { // For the second period
                 if (date.getYear() >= 2006 && date.getYear() <= 2017) {
@@ -89,5 +89,7 @@ public class StudyTimeCalculator {
 
         double internshipPercentage = calculateInternshipPercentage();
         System.out.println("Percentage of internship time: " + internshipPercentage + "%");
+
     }
+
 }

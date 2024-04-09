@@ -12,7 +12,7 @@ public class hello {
         Date today = new Date();
 
         Calendar myNextCalendar = Calendar.getInstance();
-        myNextCalendar.set(1998, 3, 4);
+        myNextCalendar.set(1998, 8, 1);
         Date nyd = myNextCalendar.getTime();
 
         hello myObject = new hello();

@@ -1,0 +1,65 @@
+function calculateStudyTimePeriod1():
+    start = LocalDate.of(1978, 9, 1)
+    end = LocalDate.of(1988, 9, 1)
+    return calculateStudyTime(start, end)
+
+function calculateStudyTimePeriod2():
+    start = LocalDate.of(2006, 9, 1)
+    end = LocalDate.of(2018, 9, 1)
+    return calculateStudyTime(start, end)
+
+function calculateStudyTime(start, end):
+    studyTime = 0
+    date = start
+    while date < end:
+        if date < LocalDate.of(1988, 9, 1):
+            if date.year >= 1978 and date.year <= 1981:
+                studyTime += 4 * 180  // 4 hours/day for 180 days/year (1st-3rd grade)
+            else if date.year >= 1982 and date.year <= 1987:
+                studyTime += 34 * 5  // 34 hours/week for 5 days (4th-8th grade)
+            else:
+                studyTime += 6 * 180  // 6 hours/day for 180 days/year (9th-10th grade)
+        else:
+            if date.year >= 2006 and date.year <= 2017:
+                studyTime += 4 * 180  // 4 hours/day for 180 days/year (1st-5th grade)
+            else:
+                studyTime += 6 * 180  // 6 hours/day for 180 days/year (6th-12th grade)
+        date = date.plusYears(1)
+    return studyTime
+
+function compareInterestHours():
+    interestHoursPeriod1 = 4 * (365 / 7)  // 4 hours per week, only counting 7 days
+    interestHoursPeriod2 = 4 * (365 / 7)  // 4 hours per week, only counting 7 days
+    return compare(interestHoursPeriod1, interestHoursPeriod2)
+
+function calculateInternshipPercentage():
+    totalSemesters = 12  // 12 semesters for 6 years
+    internships = totalSemesters * 2  // 2 internships per semester
+    totalStudyWeeks = totalSemesters * 36  // Assuming 36 weeks per semester
+    totalInternshipWeeks = internships * 8  // 8 weeks per internship
+    return (totalInternshipWeeks / totalStudyWeeks) * 100
+
+main():
+    period1Time = calculateStudyTimePeriod1()
+    period2Time = calculateStudyTimePeriod2()
+
+    print("Study time in period 1: " + period1Time + " hours")
+    print("Study time in period 2: " + period2Time + " hours")
+
+    if period1Time > period2Time:
+        print("Period 1 has more study time.")
+    else if period1Time < period2Time:
+        print("Period 2 has more study time.")
+    else:
+        print("Both periods have equal study time.")
+
+    comparisonResult = compareInterestHours()
+    if comparisonResult > 0:
+        print("More hours spent on interests in period 1.")
+    else if comparisonResult < 0:
+        print("More hours spent on interests in period 2.")
+    else:
+        print("Equal hours spent on interests in both periods.")
+
+    internshipPercentage = calculateInternshipPercentage()
+    print("Percentage of internship time: " + internshipPercentage + "%")
