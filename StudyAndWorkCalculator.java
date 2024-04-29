@@ -2,10 +2,20 @@ public class StudyAndWorkCalculator {
 
     public static void main(String[] args) {
         int totalHours = calculateTotalHours();
-        System.out.println("Total hours spent studying: " + totalHours);
+        System.out.println("1978-1983: " + totalHours);
+        int dadlaga = dadlagaHuvi();
+        System.out.println("dadlagiin ezleh huvi: " + dadlaga);
 
         int totalHours2 = calculateTotalHours2();
-        System.out.println("Total hours spent studying: " + totalHours2);
+        System.out.println("2006-2022: " + totalHours2);
+        int dadlaga2 = dadlagaHuvi2();
+        System.out.println("dadlagiin ezleh huvi: " + dadlaga2);
+
+        int interest = interest();
+        System.out.println("1978 ond uzsen sonirholtoi hicheeliin tsag: " + interest);
+        int interest2 = interest2();
+        System.out.println("2006 ond uzsen sonirholtoi hicheeliin tsag: " + interest2);
+
     }
 
     public static int calculateTotalHours() {
@@ -49,4 +59,31 @@ public class StudyAndWorkCalculator {
 
         return totalHours2;
     }
+
+    public static int dadlagaHuvi() {
+        int hoursInUniversityDadlaga = 5 * 3 * 6 * ((274 / 7) - 8);
+        int convertedUniverHoursDad = hoursInUniversityDadlaga * 60 / 90;
+        int dadlaga = 24 * 7 * 8 * 100 / convertedUniverHoursDad;
+
+        return dadlaga;
+    }
+
+    public static int dadlagaHuvi2() {
+        int hoursInUniversityDadlaga2 = 4 * 4 * 5 * ((274 / 7) - 8);
+        int convertedUniverHoursDad2 = hoursInUniversityDadlaga2 * 60 / 90;
+        int dadlaga2 = 24 * 7 * 8 * 100 / convertedUniverHoursDad2;
+
+        return dadlaga2;
+    }
+
+    public static int interest() {
+        int interest = 4 * 6 * 274 / 7;
+        return interest;
+    }
+
+    public static int interest2() {
+        int interest2 = 4 * 5 * 274 / 7;
+        return interest2;
+    }
+
 }

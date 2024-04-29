@@ -1,0 +1,16 @@
+# Connect to the databases of Organization A and B
+connect_to_organization_A_database()
+connect_to_organization_B_database()
+
+# Step 1: Sort employee information from Organization A
+sorted_employee_info = sort_employee_info(organization_A_database)
+
+# Step 2: Transfer sorted employee information to Organization B
+transfer_employee_info(sorted_employee_info, organization_B_database)
+
+# Step 3: Store working information separately in Organization B
+working_info = extract_working_info(sorted_employee_info)
+store_working_info(working_info, organization_B_database)
+
+# Close database connections
+close_database_connections()
